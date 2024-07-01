@@ -1,8 +1,6 @@
 // app.js
 
-
-// Desktop icons data
-const installedApps = ['Terminal', 'README_FIRST'];
+const installedApps = ['Terminal', 'README_FIRST', 'Email'];
 const desktopIcons = [
     { name: 'Terminal', icon: '⌨️' },
     { name: 'Browser', icon: '🌐' },
@@ -16,7 +14,6 @@ let notifications = [];
 let currentUser = 'QuantumBurger';
 let currentDirectory = '~';
 
-// Function to create desktop icons
 function createDesktopIcons() {
     const desktopIconsContainer = document.getElementById('desktop-icons');
     desktopIcons.forEach(icon => {
@@ -31,34 +28,41 @@ function createDesktopIcons() {
     });
 }
 
-// Function to open an application
 function openApplication(appName) {
     if (installedApps.includes(appName)) {
         const window = createWindow(appName);
-        if (appName === 'Terminal') {
-            initializeTerminal(window.querySelector('.window-content'));
-        } else if (appName === 'README_FIRST') {
-            initializeReadme(window.querySelector('.window-content'));
-        } else {
-            // Placeholder for other installed applications
-            window.querySelector('.window-content').innerHTML = `<p>${appName} application content goes here.</p>`;
+        const contentElement = window.querySelector('.window-content');
+        
+        switch(appName) {
+            case 'Terminal':
+                initializeTerminal(contentElement);
+                break;
+            case 'README_FIRST':
+                initializeReadme(contentElement);
+                break;
+            case 'Email':
+                initializeEmail(contentElement);
+                break;
+            default:
+                contentElement.innerHTML = `<p>${appName} application content goes here.</p>`;
         }
+        
         windows.push(window);
         updateTaskbar();
+        saveState();
     } else {
         showSystemModal("Application not installed. You have to file a request with BOFH.");
     }
 }
 
-// Function to create a new window
+
 function createWindow(title) {
     const windowElement = document.createElement('div');
     windowElement.className = 'window';
 
-    // Set size and position for terminal windows
     if (title === 'Terminal') {
-        const windowWidth = Math.floor(window.innerWidth * 0.6); // 60% of viewport width
-        const windowHeight = Math.floor(window.innerHeight * 0.4); // 40% of viewport height
+        const windowWidth = Math.floor(window.innerWidth * 0.6);
+        const windowHeight = Math.floor(window.innerHeight * 0.4);
         const leftPosition = Math.floor((window.innerWidth - windowWidth) / 2);
         const topPosition = Math.floor((window.innerHeight - windowHeight) / 2);
 
@@ -67,7 +71,6 @@ function createWindow(title) {
         windowElement.style.left = `${leftPosition}px`;
         windowElement.style.top = `${topPosition}px`;
     } else {
-        // Default positioning for other windows
         windowElement.style.left = `${windows.length * 30 + 50}px`;
         windowElement.style.top = `${windows.length * 30 + 50}px`;
     }
@@ -90,14 +93,13 @@ function createWindow(title) {
     return windowElement;
 }
 
-// Function to close a window
 function closeWindow(windowElement) {
     windowElement.remove();
     windows = windows.filter(w => w !== windowElement);
     updateTaskbar();
+    saveState(); // Save state after closing an app
 }
 
-// Function to make a window draggable
 function makeWindowDraggable(windowElement) {
     const header = windowElement.querySelector('.window-header');
     let isDragging = false;
@@ -121,7 +123,6 @@ function makeWindowDraggable(windowElement) {
     });
 }
 
-// Function to update the taskbar
 function updateTaskbar() {
     const openWindowsElement = document.getElementById('open-windows');
     openWindowsElement.innerHTML = '';
@@ -135,12 +136,10 @@ function updateTaskbar() {
     });
 }
 
-// Function to get the top z-index
 function getTopZIndex() {
     return Math.max(0, ...windows.map(w => parseInt(w.style.zIndex) || 0));
 }
 
-// Function to initialize the terminal
 function initializeTerminal(terminalElement) {
     let commandHistory = [];
     let historyIndex = 0;
@@ -187,7 +186,6 @@ function initializeTerminal(terminalElement) {
         }
     });
 
-    // Display welcome message
     outputElement.innerHTML = `<div class="terminal-welcome">Welcome to DoomOS v1.0.0</div>`;
     outputElement.innerHTML += `<div class="terminal-welcome">Type 'help' for available commands.</div>`;
 
@@ -237,27 +235,23 @@ function processCommand(command, outputElement, promptElement) {
     outputElement.scrollTop = outputElement.scrollHeight;
 }
 
-// Function to update clock
 function updateClock() {
     const now = new Date();
     const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     document.getElementById('clock').textContent = timeString;
 }
 
-// Function to toggle notifications panel
 function toggleNotificationsPanel() {
     const panel = document.getElementById('notifications-panel');
     panel.classList.toggle('hidden');
     updateNotificationsPanel();
 }
 
-// Function to add a notification
 function addNotification(message) {
     notifications.push({ message, timestamp: new Date() });
     updateNotificationsPanel();
 }
 
-// Function to update notifications panel
 function updateNotificationsPanel() {
     const notificationsList = document.getElementById('notifications-list');
     notificationsList.innerHTML = '';
@@ -269,7 +263,6 @@ function updateNotificationsPanel() {
     });
 }
 
-// Function to initialize README_FIRST content
 function initializeReadme(contentElement) {
     contentElement.innerHTML = `
         <h2>Welcome to The Doomsday Machine</h2>
@@ -285,7 +278,7 @@ function initializeReadme(contentElement) {
         <p>Good luck, and remember: with great power comes great responsibility.</p>
     `;
 }
-// New functions. ** In REVIEW this should be updated to describe what these functions do. **
+
 function showSystemModal(message) {
     const modal = document.getElementById('system-modal');
     const modalMessage = document.getElementById('modal-message');
@@ -293,7 +286,6 @@ function showSystemModal(message) {
     modal.classList.remove('hidden');
 }
 
-// New functions. ** In REVIEW this should be updated to describe what these functions do. **
 function hideSystemModal() {
     const modal = document.getElementById('system-modal');
     if (modal) {
@@ -302,7 +294,7 @@ function hideSystemModal() {
         console.error('System modal not found');
     }
 }
-// New functions. ** In REVIEW this should be updated to describe what these functions do. **
+
 function initializeModal() {
     const modalCloseButton = document.getElementById('modal-close');
     if (modalCloseButton) {
@@ -312,7 +304,120 @@ function initializeModal() {
     }
 }
 
-// Initialize the desktop
+function saveState() {
+    const openApps = windows.map(window => {
+        return {
+            name: window.querySelector('.window-header span').textContent,
+            position: {
+                left: window.style.left,
+                top: window.style.top
+            },
+            size: {
+                width: window.style.width,
+                height: window.style.height
+            }
+        };
+    });
+
+    localStorage.setItem('doomsdayMachineState', JSON.stringify(openApps));
+}
+
+function loadState() {
+    const savedState = localStorage.getItem('doomsdayMachineState');
+    if (savedState) {
+        const openApps = JSON.parse(savedState);
+        openApps.forEach(app => {
+            const window = createWindow(app.name);
+            window.style.left = app.position.left;
+            window.style.top = app.position.top;
+            window.style.width = app.size.width;
+            window.style.height = app.size.height;
+
+            if (app.name === 'Terminal') {
+                initializeTerminal(window.querySelector('.window-content'));
+            } else if (app.name === 'README_FIRST') {
+                initializeReadme(window.querySelector('.window-content'));
+            } else {
+                window.querySelector('.window-content').innerHTML = `<p>${app.name} application content goes here.</p>`;
+            }
+
+            windows.push(window);
+        });
+        updateTaskbar();
+    }
+}
+function initializeEmail(contentElement) {
+    contentElement.innerHTML = `
+        <div class="email-app">
+            <div class="email-sidebar">
+                <button id="compose-email">Compose</button>
+                <div class="email-list"></div>
+            </div>
+            <div class="email-content"></div>
+        </div>
+    `;
+
+    const emailList = contentElement.querySelector('.email-list');
+    const emailContent = contentElement.querySelector('.email-content');
+    const composeButton = contentElement.querySelector('#compose-email');
+
+    function renderEmailList() {
+        emailList.innerHTML = '';
+        getEmails().forEach(email => {
+            const emailElement = document.createElement('div');
+            emailElement.className = `email-item ${email.read ? 'read' : 'unread'}`;
+            emailElement.innerHTML = `
+                <div class="email-subject">${email.subject}</div>
+                <div class="email-from">${email.from}</div>
+                <div class="email-date">${new Date(email.date).toLocaleString()}</div>
+            `;
+            emailElement.addEventListener('click', () => displayEmail(email.id));
+            emailList.appendChild(emailElement);
+        });
+    }
+
+    function displayEmail(id) {
+        const email = getEmail(id);
+        if (email) {
+            markEmailAsRead(id);
+            emailContent.innerHTML = `
+                <h2>${email.subject}</h2>
+                <p><strong>From:</strong> ${email.from}</p>
+                <p><strong>To:</strong> ${email.to}</p>
+                <p><strong>Date:</strong> ${new Date(email.date).toLocaleString()}</p>
+                <div class="email-body">${email.body}</div>
+                <button class="reply-button">Reply</button>
+            `;
+            const replyButton = emailContent.querySelector('.reply-button');
+            replyButton.addEventListener('click', () => composeEmail(email.from, `Re: ${email.subject}`));
+            renderEmailList();
+        }
+    }
+
+    function composeEmail(to = '', subject = '') {
+        emailContent.innerHTML = `
+            <h2>Compose Email</h2>
+            <input type="text" id="email-to" placeholder="To" value="${to}">
+            <input type="text" id="email-subject" placeholder="Subject" value="${subject}">
+            <textarea id="email-body" placeholder="Message"></textarea>
+            <button id="send-email">Send</button>
+        `;
+        const sendButton = emailContent.querySelector('#send-email');
+        sendButton.addEventListener('click', () => {
+            const newTo = emailContent.querySelector('#email-to').value;
+            const newSubject = emailContent.querySelector('#email-subject').value;
+            const newBody = emailContent.querySelector('#email-body').value;
+            sendEmail(newTo, newSubject, newBody);
+            renderEmailList();
+            emailContent.innerHTML = '<p>Email sent!</p>';
+        });
+    }
+
+    composeButton.addEventListener('click', () => composeEmail());
+
+    renderEmailList();
+}
+
 function initializeDesktop() {
     createDesktopIcons();
     updateClock();
@@ -325,13 +430,13 @@ function initializeDesktop() {
 
     document.getElementById('notifications-icon').addEventListener('click', toggleNotificationsPanel);
 
-    // Initialize the modal
     initializeModal();
+    loadState();
 
-    // Add some sample notifications
     addNotification('Welcome to The Doomsday Machine');
     addNotification('New email received');
 }
 
-// Run initialization when the DOM is fully loaded
+window.addEventListener('beforeunload', saveState);
+
 document.addEventListener('DOMContentLoaded', initializeDesktop);

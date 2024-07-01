@@ -299,3 +299,40 @@ body, html {
 .hidden {
     display: none;
 }
+
+.email-from, .email-date {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.email-body {
+    margin-top: 20px;
+    white-space: pre-wrap;
+}
+
+.reply-button, #send-email {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: var(--accent-secondary);
+    color: var(--text-primary);
+    border: none;
+    cursor: pointer;
+}
+
+.reply-button:hover, #send-email:hover {
+    background-color: var(--accent-primary);
+}
+
+#email-to, #email-subject, #email-body {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--accent-secondary);
+}
+
+#email-body {
+    height: 200px;
+    resize: vertical;
+}
