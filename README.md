@@ -1,12 +1,19 @@
 # README_FIRST.txt
 
-So it's another Tuesday in 2020, and honestly, all the days are just blending together with these endless pandemic lockdowns. But here's something a bit strange I've stumbled upon lately: there's talk on some deep web forums about a group called "Nexus Innovations" that's quietly pulling people from the hacker and open-source worlds. The weirdest part? Once someone joins them, they pretty much disappear off the map.
+Don't freak out. Just read this, trust me. 
 
-Let me set the scene a bit. I’m Freddie, but at the McDonald's where I’ve been managing shifts for nearly two decades, some folks still call me “Fries.” I’m not too keen on that nickname, though. When I'm not at work, I spend my time really diving into things like quantum physics, computer science, math, linguistics, philosophy, and psychology. I also hang around online as "QuantumBurger," where I explore these subjects. It's not about showing off; it’s just what I love to do, you know? It feels like grabbing pieces of a massive puzzle.
+I’m Freddie, I got the same message as you did. I accepted just like you did. 
+Until two years ago I had been working at the same McDonald's managing shifts for nearly two decades, some folks still call me “Fries.”... 
 
-This one peculiar Tuesday, I find this incredibly fancy piece of paper on my doormat—it’s the kind of fancy that you just have to pick up and look at. One side is stamped with "Join the club" in this super slick font, and the other side just sports a mysterious black QR code.
+I am still trying to figure out what makes them pick certain people, I have have met so many different types... Look, I am not a genious, I just spend my time really diving into things like math, physics, computer science, linguistics, philosophy, and psychology. It's just my journey to understand the world, but for some reason what I found is of value here. 
 
-I give the QR code a scan, and boom, my phone displays this message:
+Anyway, for me the message came on a Tuesday in august of 2020, or something like that.. 
+
+All the days were just blending together cuz of the endless pandemic lockdowns. But I remember it was around that time I had just stumbled upon messages on forums about the group called "Nexus Innovations" that's was pulling people from the hacker and open-source worlds. The weirdest part was the radio silence once they got people on the payroll.
+
+I was just going back from work and I  find this incredibly fancy piece of paper on my doormat—it’s the kind of fancy that you just have to pick up and look at. One side is stamped with "Join the club" in this super slick font, and the other side just sports a mysterious black QR code.
+
+I gave the QR code a scan, and boom, my phone displays this message:
 
 ```
 "Freddie (or should we say, QuantumBurger),
@@ -22,10 +29,10 @@ It’s totally up to you, but remember: sometimes it's the unexpected paths that
 - N"
 ```
 
-That's pretty wild, right? They're talking about a "Doomsday Machine Club," which sounds intense but also kind of thrilling. Here I am, just a regular guy who likes to think about big questions, and suddenly I've got this opportunity to maybe do something meaningful. Do I stick with what’s familiar, or take this leap into the unknown? 
+Did they do the same to you? Who names their shit "Doomsday Machine Club"?? It sounds cringy and also intense.. 
 
-Yeah... so... I opened that link on my phone, and I swear, ALL my stuff started to upgrade, laptop, desktop, everything. They were already in there, ready. Just waiting.
+Anyway... here I am, just a regular guy who likes to think about big questions, and suddenly I've got this opportunity to maybe do something meaningful, or end the world...?? Do I stick with what’s familiar, or take this leap into the unknown? Fuck it, I always lived by "If you cant dodge it, ram it"
 
-Since you are here now, you got the same piece of paper. I left this message for you, I will try to contact you again soon. 
+So... I opened that link on my phone, and I swear, ALL my stuff started to upgrade, laptop, desktop, everything. They were already in there, ready. Just waiting.
 
-I can't really tell you anything now, except trust no one, I mean it. NO ONE.
+Since you are here now, you got the same piece of paper. I left this message for you, I will try to contact you again soon. I can't really tell you anything now, except trust no one, I mean it. NO ONE.
