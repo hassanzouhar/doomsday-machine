@@ -16,7 +16,7 @@ Intrigued, Jack brings the box inside. As he runs his french fry-scented fingers
 2. A small, obsidian cube with pulsating blue veins of light.
 3. A handwritten note on thick, cream-colored paper that reads:
 
-  ´´´
+```
    "Mr. Fitzgerald (or should we say, QuantumBurger),
    
    The world stands at a precipice, and conventional thinkers have failed us. We at Nexus Innovations believe that true innovation - true salvation - lies in minds unfettered by academic dogma. Your posts on n-dimensional AI architecture have not gone unnoticed.
@@ -28,7 +28,7 @@ Intrigued, Jack brings the box inside. As he runs his french fry-scented fingers
    The choice, as always, is yours. But remember, in chess as in life, sometimes the most powerful piece is the one the opponent never saw coming.
    
    - N
-   ´´´
+```
 Jack's hands tremble as he reads the note, smudging a bit of ketchup on the corner. This is everything he's dreamed of - a chance to apply his unorthodox theories, to potentially change the course of human history. But the implications are staggering. The term "Doomsday Machine" isn't used lightly, and even with his unconventional background, Jack understands the risks of creating a truly unrestricted AI.
 
 As he holds the neural interface, weighing it in his hands, Jack knows he stands at a crossroads. Does he take this leap into the unknown, leaving behind the safe, predictable world of fast food for a chance at technological revolution? Or does he walk away, condemning his brilliant mind to a life of unfulfilled potential?
