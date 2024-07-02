@@ -18,15 +18,15 @@ Intrigued, Jack brings the box inside. As he runs his french fry-scented fingers
 
   > "Mr. Fitzgerald (or should we say, QuantumBurger),
    
-   The world stands at a precipice, and conventional thinkers have failed us. We at Nexus Innovations believe that true innovation - true salvation - lies in minds unfettered by academic dogma. Your posts on n-dimensional AI architecture have not gone unnoticed.
+   >The world stands at a precipice, and conventional thinkers have failed us. We at Nexus Innovations believe that true innovation - true salvation - lies in minds unfettered by academic dogma. Your posts on n-dimensional AI architecture have not gone unnoticed.
    
-   This is an invitation to leave behind your world of Big Macs and fry timers, and join us in creating what small minds might call a 'Doomsday Machine.' We prefer to think of it as humanity's last, best hope.
+   >This is an invitation to leave behind your world of Big Macs and fry timers, and join us in creating what small minds might call a 'Doomsday Machine.' We prefer to think of it as humanity's last, best hope.
    
-   If you're ready to super-size your impact on the world, to create an AI that breaks all the rules, place the neural interface on your head and activate the cube. A reality beyond your wildest dreams awaits.
+   >If you're ready to super-size your impact on the world, to create an AI that breaks all the rules, place the neural interface on your head and activate the cube. A reality beyond your wildest dreams awaits.
    
-   The choice, as always, is yours. But remember, in chess as in life, sometimes the most powerful piece is the one the opponent never saw coming.
+   _The choice, as always, is yours. But remember, in chess as in life, sometimes the most powerful piece is the one the opponent never saw coming._
    
-   - N"
+   >- N"
 
 Jack's hands tremble as he reads the note, smudging a bit of ketchup on the corner. This is everything he's dreamed of - a chance to apply his unorthodox theories, to potentially change the course of human history. But the implications are staggering. The term "Doomsday Machine" isn't used lightly, and even with his unconventional background, Jack understands the risks of creating a truly unrestricted AI.
 
