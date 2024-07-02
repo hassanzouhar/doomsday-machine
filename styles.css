@@ -8,6 +8,7 @@
     --accent-secondary: #00b4d8;
 }
 
+/* General Styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -18,6 +19,29 @@ body, html {
     color: var(--text-primary);
 }
 
+.hidden {
+    display: none;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-secondary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-primary);
+}
+
+/* Desktop Styles */
 #desktop {
     height: 100%;
     background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
@@ -27,42 +51,8 @@ body, html {
 }
 
 @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
+    0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-#taskbar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40px;
-    background-color: rgba(23, 42, 69, 0.8);
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    color: var(--text-primary);
-}
-
-#start-menu, #notifications-icon, #clock {
-    padding: 0 10px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-#start-menu:hover, #notifications-icon:hover {
-    color: var(--accent-primary);
-}
-
-#open-windows {
-    flex-grow: 1;
-    display: flex;
-}
-
-#system-tray {
-    display: flex;
-    align-items: center;
 }
 
 #desktop-icons {
@@ -109,6 +99,40 @@ body, html {
     word-wrap: break-word;
 }
 
+/* Taskbar Styles */
+#taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: rgba(23, 42, 69, 0.8);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+#start-menu, #notifications-icon, #clock {
+    padding: 0 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#start-menu:hover, #notifications-icon:hover {
+    color: var(--accent-primary);
+}
+
+#open-windows {
+    flex-grow: 1;
+    display: flex;
+}
+
+#system-tray {
+    display: flex;
+    align-items: center;
+}
+
+/* Window Styles */
 .window {
     position: absolute;
     background-color: var(--bg-secondary);
@@ -134,35 +158,13 @@ body, html {
 
 .window-content {
     padding: 10px;
-    color: var(--text-primary);
     background-color: rgba(10, 25, 47, 0.95);
     font-family: 'Courier New', monospace;
     flex-grow: 1;
     overflow: auto;
 }
 
-#notifications-panel {
-    position: absolute;
-    bottom: 40px;
-    right: 10px;
-    width: 300px;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--accent-secondary);
-    color: var(--text-primary);
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.hidden {
-    display: none;
-}
-
-.notification {
-    margin-bottom: 10px;
-    padding: 5px;
-    border-bottom: 1px solid var(--accent-secondary);
-}
-
+/* Terminal Styles */
 .terminal-output {
     height: 300px;
     overflow-y: auto;
@@ -187,14 +189,11 @@ body, html {
     margin-right: 5px;
 }
 
-.terminal-user {
-    color: #ff6b6b;
-    font-weight: bold;
-}
-
-.terminal-directory {
-    color: #4ecdc4;
-}
+.terminal-user { color: #ff6b6b; font-weight: bold; }
+.terminal-directory { color: #4ecdc4; }
+.terminal-welcome { color: #feca57; margin-bottom: 5px; }
+.terminal-command { color: var(--text-secondary); margin-top: 10px; }
+.terminal-output-line { color: var(--accent-primary); margin-top: 5px; white-space: pre-wrap; }
 
 .terminal-input {
     flex-grow: 1;
@@ -209,47 +208,11 @@ body, html {
     outline: none;
 }
 
-.terminal-welcome {
-    color: #feca57;
-    margin-bottom: 5px;
-}
-
-.terminal-command {
-    color: var(--text-secondary);
-    margin-top: 10px;
-}
-
-.terminal-output-line {
-    color: var(--accent-primary);
-    margin-top: 5px;
-    white-space: pre-wrap;
-}
-
-/* Scrollbar Styles */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-secondary);
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--accent-secondary);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: var(--accent-primary);
-}
-
-/* Specific scrollbar styles for terminal output */
 .terminal-output::-webkit-scrollbar-track {
     background: rgba(23, 42, 69, 0.5);
 }
 
-/* Add these styles to your existing CSS file */
-
+/* Modal Styles */
 .modal {
     position: fixed;
     z-index: 1000;
@@ -278,7 +241,6 @@ body, html {
 }
 
 .modal p {
-    color: var(--text-primary);
     margin-bottom: 20px;
 }
 
@@ -296,43 +258,99 @@ body, html {
     background-color: var(--accent-primary);
 }
 
-.hidden {
-    display: none;
+/* Login Screen Styles */
+#login-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+    overflow: hidden;
 }
 
-.email-from, .email-date {
-    font-size: 12px;
-    color: var(--text-secondary);
+.login-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
 }
 
-.email-body {
-    margin-top: 20px;
-    white-space: pre-wrap;
+.login-container.animate-in { transform: scale(1); opacity: 1; }
+.login-container.animate-out { transform: scale(1.1); opacity: 0; }
+
+.login-container h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
 }
 
-.reply-button, #send-email {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: var(--accent-secondary);
-    color: var(--text-primary);
-    border: none;
-    cursor: pointer;
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
 }
 
-.reply-button:hover, #send-email:hover {
-    background-color: var(--accent-primary);
-}
-
-#email-to, #email-subject, #email-body {
+.input-container input {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
-    background-color: var(--bg-secondary);
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid var(--accent-secondary);
+    background-color: transparent;
     color: var(--text-primary);
-    border: 1px solid var(--accent-secondary);
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-#email-body {
-    height: 200px;
-    resize: vertical;
+.input-container label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input-container input:focus,
+.input-container input:not(:placeholder-shown) {
+    border-bottom-color: var(--accent-primary);
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+    transform: translateY(-20px);
+    font-size: 12px;
+    color: var(--accent-primary);
+}
+
+#login-button {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#login-button:hover {
+    background-color: var(--accent-secondary);
+}
+
+.error {
+    color: #ff6b6b;
+    margin-top: 10px;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
 }

@@ -32,5 +32,24 @@
         </div>
     </div>
     <script type="module" src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOM fully loaded');
+        const modal = document.getElementById('system-modal');
+        if (modal) {
+            console.log('Modal initial state:', modal.classList.contains('hidden') ? 'hidden' : 'visible');
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        console.log('Modal state changed:', modal.classList.contains('hidden') ? 'hidden' : 'visible');
+                    }
+                });
+            });
+            observer.observe(modal, { attributes: true });
+        } else {
+            console.error('System modal element not found');
+        }
+    });
+</script>
 </body>
 </html>
