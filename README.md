@@ -1,4 +1,4 @@
-# The Doomsday Machine: Beginnings
+# README_FIRST.txt
 
 So it's another Tuesday in 2020, and honestly, all the days are just blending together with these endless pandemic lockdowns. But here's something a bit strange I've stumbled upon lately: there's talk on some deep web forums about a group called "Nexus Innovations" that's quietly pulling people from the hacker and open-source worlds. The weirdest part? Once someone joins them, they pretty much disappear off the map.
 
