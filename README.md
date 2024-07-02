@@ -1,7 +1,7 @@
 # README_FIRST.txt
 
 Don't freak out. Just read this, trust me. 
-
+(public/images/freddie.png)
 I’m Freddie, I got the same message as you did. I accepted just like you did. 
 Until two years ago I had been working at the same McDonald's managing shifts for nearly two decades, some folks still call me “Fries.”... 
 
