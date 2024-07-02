@@ -16,7 +16,7 @@ Intrigued, Jack brings the box inside. As he runs his french fry-scented fingers
 2. A small, obsidian cube with pulsating blue veins of light.
 3. A handwritten note on thick, cream-colored paper that reads:
 
-   "Mr. Fitzgerald (or should we say, QuantumBurger),
+  > "Mr. Fitzgerald (or should we say, QuantumBurger),
    
    The world stands at a precipice, and conventional thinkers have failed us. We at Nexus Innovations believe that true innovation - true salvation - lies in minds unfettered by academic dogma. Your posts on n-dimensional AI architecture have not gone unnoticed.
    
