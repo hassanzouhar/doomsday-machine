@@ -133,7 +133,7 @@ export function showSystemModal(message) {
     modal.classList.remove('hidden');
 }
 
-function initializeModal() {
+export function initializeModal() {
     const modal = document.getElementById('system-modal');
     const modalCloseButton = document.getElementById('modal-close');
     if (modalCloseButton) {
@@ -146,3 +146,4 @@ function initializeModal() {
     }
     console.log('Modal initialized');
 }
+
