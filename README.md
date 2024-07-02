@@ -1,7 +1,7 @@
 # README_FIRST.txt
 
 Don't freak out. Just read this, trust me. 
-![Freedie](https://github.com/hassanzouhar/doomsday-machine/blob/main/public/images/freddie.jpg)
+
 I’m Freddie, I got the same message as you did. I accepted just like you did. 
 Until two years ago I had been working at the same McDonald's managing shifts for nearly two decades, some folks still call me “Fries.”... 
 
@@ -34,5 +34,7 @@ Did they do the same to you? Who names their shit "Doomsday Machine Club"?? It s
 Anyway... here I am, just a regular guy who likes to think about big questions, and suddenly I've got this opportunity to maybe do something meaningful, or end the world...?? Do I stick with what’s familiar, or take this leap into the unknown? Fuck it, I always lived by "If you cant dodge it, ram it"
 
 So... I opened that link on my phone, and I swear, ALL my stuff started to upgrade, laptop, desktop, everything. They were already in there, ready. Just waiting.
+
+![Freedie](https://github.com/hassanzouhar/doomsday-machine/blob/main/public/images/freddie.jpg)
 
 Since you are here now, you got the same piece of paper. I left this message for you, I will try to contact you again soon. I can't really tell you anything now, except trust no one, I mean it. NO ONE.
