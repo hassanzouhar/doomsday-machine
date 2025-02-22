@@ -1,0 +1,440 @@
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Desktop styles */
+#desktop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #2e2e2e;
+    overflow: hidden;
+}
+
+#desktop-icons {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-primary);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.desktop-icon:hover {
+    transform: scale(1.1);
+}
+
+.icon-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    background-color: rgba(100, 255, 218, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.desktop-icon:hover .icon-image {
+    background-color: rgba(100, 255, 218, 0.2);
+}
+
+.desktop-icon span {
+    font-size: 12px;
+    max-width: 100px;
+    word-wrap: break-word;
+}
+
+/* Taskbar styles */
+#taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: rgba(23, 42, 69, 0.8);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+#start-menu, #notifications-icon, #clock {
+    padding: 0 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#start-menu:hover, #notifications-icon:hover {
+    color: var(--accent-primary);
+}
+
+#open-windows {
+    flex-grow: 1;
+    display: flex;
+}
+
+#system-tray {
+    display: flex;
+    align-items: center;
+}
+
+/* Start menu popup styles */
+#start-menu-popup {
+    position: absolute;
+    bottom: 56px;
+    left: 16px;
+    width: 240px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.start-menu-item {
+    padding: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.start-menu-item:hover {
+    background: #f0f0f0;
+}
+
+/* System modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+}
+
+#modal-close {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#modal-close:hover {
+    background: #3700b3;
+}
+
+/* Notifications panel styles */
+#notifications-panel {
+    position: absolute;
+    bottom: 56px;
+    right: 16px;
+    width: 320px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 16px;
+}
+
+#notifications-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Terminal styles */
+.terminal-container {
+    background-color: #000;
+    color: #00ff00;
+    font-family: monospace;
+    padding: 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-output {
+    flex-grow: 1;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+}
+
+.terminal-prompt {
+    margin-right: 8px;
+}
+
+.terminal-input {
+    background: none;
+    border: none;
+    color: #00ff00;
+    font-family: monospace;
+    outline: none;
+    flex-grow: 1;
+}
+
+.terminal-command {
+    display: flex;
+    align-items: center;
+}
+
+.terminal-prompt-inline {
+    margin-right: 8px;
+}
+
+.terminal-output-line {
+    margin-top: 8px;
+}
+
+.terminal-welcome {
+    margin-bottom: 16px;
+}
+
+/* Window styles */
+.window {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 600px;
+    height: 400px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.window-title-bar {
+    background: #333;
+    color: white;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.window-title {
+    font-weight: bold;
+}
+
+.window-close-button {
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: background 0.3s;
+}
+
+.window-close-button:hover {
+    background: darkred;
+}
+
+.window-content {
+    flex-grow: 1;
+    overflow: auto;
+    padding: 16px;
+}
+
+/* README Styles */
+.readme-content {
+    padding: 20px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.readme-content h2, .readme-content h3 {
+    color: var(--accent-primary);
+}
+
+.readme-content p {
+    margin-bottom: 10px;
+}
+
+.readme-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.readme-content li {
+    margin-bottom: 5px;
+}
+
+/* Email App Styles */
+.email-app {
+    display: flex;
+    height: 100%;
+}
+
+.email-sidebar {
+    width: 200px;
+    background: var(--bg-secondary);
+    padding: 10px;
+    border-right: 1px solid var(--accent-secondary);
+}
+
+.email-list {
+    overflow-y: auto;
+    height: calc(100% - 40px);
+}
+
+.email-content {
+    flex-grow: 1;
+    padding: 10px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.email-item {
+    padding: 10px;
+    border-bottom: 1px solid var(--accent-secondary);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.email-item:hover {
+    background: var(--bg-secondary);
+}
+
+.email-item.read {
+    color: var(--text-secondary);
+}
+
+.email-item.unread {
+    font-weight: bold;
+}
+
+.email-subject {
+    font-size: 14px;
+}
+
+.email-from, .email-date {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.reply-button, #compose-email, #send-email {
+    background: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.reply-button:hover, #compose-email:hover, #send-email:hover {
+    background: var(--accent-secondary);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .window {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    #taskbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #system-tray {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #start-menu-popup {
+        width: 100%;
+        left: 0;
+    }
+
+    #notifications-panel {
+        width: 100%;
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .window {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .window-title-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .window-close-button {
+        align-self: flex-end;
+    }
+
+    #taskbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #system-tray {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #start-menu-popup {
+        width: 100%;
+        left: 0;
+    }
+
+    #notifications-panel {
+        width: 100%;
+        right: 0;
+    }
+}

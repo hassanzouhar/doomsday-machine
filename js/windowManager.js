@@ -1,41 +1,24 @@
 // windowManager.js
 let windows = [];
 
-export function createWindow(title) {
+export function createWindow(appName) {
+    const windowsContainer = document.getElementById('windows-container');
     const windowElement = document.createElement('div');
     windowElement.className = 'window';
-
-    if (title === 'Terminal') {
-        const windowWidth = Math.floor(window.innerWidth * 0.6);
-        const windowHeight = Math.floor(window.innerHeight * 0.4);
-        const leftPosition = Math.floor((window.innerWidth - windowWidth) / 2);
-        const topPosition = Math.floor((window.innerHeight - windowHeight) / 2);
-
-        windowElement.style.width = `${windowWidth}px`;
-        windowElement.style.height = `${windowHeight}px`;
-        windowElement.style.left = `${leftPosition}px`;
-        windowElement.style.top = `${topPosition}px`;
-    } else {
-        windowElement.style.left = `${windows.length * 30 + 50}px`;
-        windowElement.style.top = `${windows.length * 30 + 50}px`;
-    }
-    
     windowElement.innerHTML = `
-        <div class="window-header">
-            <span>${title}</span>
-            <button class="close-btn">×</button>
+        <div class="window-title-bar">
+            <span class="window-title">${appName}</span>
+            <button class="window-close-button">X</button>
         </div>
         <div class="window-content"></div>
     `;
-    
-    const closeBtn = windowElement.querySelector('.close-btn');
-    closeBtn.addEventListener('click', () => closeWindow(windowElement));
-    
-    makeWindowDraggable(windowElement);
-    
-    document.getElementById('windows-container').appendChild(windowElement);
-    windows.push(windowElement);
-    
+    windowsContainer.appendChild(windowElement);
+
+    const closeButton = windowElement.querySelector('.window-close-button');
+    closeButton.addEventListener('click', () => {
+        windowsContainer.removeChild(windowElement);
+    });
+
     return windowElement;
 }
 

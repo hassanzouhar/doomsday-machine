@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file here -->
+</head>
+<body>
+    <div id="desktop">
+        <div id="desktop-icons"></div>
+        <div id="windows-container"></div>
+        <div id="taskbar">
+            <div id="start-menu">Start</div>
+            <div id="open-windows"></div>
+            <div id="system-tray">
+                <div id="notifications-icon">🔔</div>
+                <div id="clock">00:00</div>
+            </div>
+        </div>
+    </div>
+    <div id="start-menu-popup" class="hidden">
+        <div class="start-menu-item" id="logout-button">Log Out</div>
+    </div>
+    <div id="system-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>System Message</h2>
+            <p id="modal-message"></p>
+            <button id="modal-close">OK</button>
+        </div>
+    </div>
+    <div id="notifications-panel" class="hidden">
+        <h3>Notifications</h3>
+        <div id="notifications-list"></div>
+    </div>
+    <script type="module" src="desktop.js"></script>
+    <script type="module" src="login.js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="windowManager.js"></script>
+</body>
+</html>
